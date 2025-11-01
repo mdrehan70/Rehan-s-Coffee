@@ -34,7 +34,7 @@ const Payment = () => {
   }
 
   return (
-    <div className="payment-container">
+    <div className="payment-container payment">
       <h1>
         Secure <span>Payment</span>
       </h1>

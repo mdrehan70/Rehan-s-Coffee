@@ -6,6 +6,22 @@
   flex-direction: column;
   align-items: center;
   padding-top: 5rem;
+  position: relative;
+  overflow: hidden;
+  animation: bgPulse 6s ease-in-out infinite alternate;
+}
+
+/* 🔥 Glowing moving light behind form */
+.payment-container::before {
+  content: "";
+  position: absolute;
+  top: -50px;
+  left: -50px;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(255,128,0,0.2), transparent 70%);
+  filter: blur(80px);
+  animation: floatGlow 6s ease-in-out infinite alternate;
 }
 
 .payment-container h1 {
@@ -13,15 +29,23 @@
   font-weight: bold;
   color: #fff;
   margin-bottom: 2rem;
+  animation: fadeInDown 1s ease forwards;
 }
 
 .payment-container h1 span {
   color: #ff8000;
 }
 
+/* 🔆 Floating Glow Animation */
 @keyframes floatGlow {
-  0% { transform: translateY(0px); opacity: 0.6; }
-  100% { transform: translateY(20px); opacity: 0.9; }
+  0% { transform: translateY(0px) scale(1); opacity: 0.5; }
+  100% { transform: translateY(20px) scale(1.2); opacity: 0.9; }
+}
+
+/* 🌌 Background subtle pulse */
+@keyframes bgPulse {
+  0% { background: radial-gradient(circle at top left, #1a1a1a, #000); }
+  100% { background: radial-gradient(circle at bottom right, #222, #000); }
 }
 
 .payment-form {
@@ -32,7 +56,9 @@
   width: 400px;
   display: flex;
   flex-direction: column;
+  margin-bottom: 20px;
   gap: 1rem;
+  animation: fadeUp 1.2s ease-in-out;
 }
 
 .expiry input, .cvv input {
@@ -52,6 +78,7 @@
   padding: 0.8rem;
   outline: none;
   transition: border-color 0.3s;
+  animation: inputFade 1.5s ease forwards;
 }
 
 .payment-form input:focus {
@@ -81,6 +108,7 @@
   font-size: 1rem;
   cursor: pointer;
   transition: all 0.3s;
+  animation: buttonPulse 2.5s ease-in-out infinite;
 }
 
 .pay-btn:hover {
@@ -103,22 +131,46 @@
 .payment-success h2 {
   color: #00ff99;
   font-size: 2rem;
+  animation: fadeInUp 1s ease;
 }
 
 .payment-success p {
   margin-top: 10px;
   color: #ccc;
+  animation: fadeIn 1.5s ease;
 }
 
+/* ✨ Animations */
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes inputFade {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+/* 💫 Button breathing glow */
+@keyframes buttonPulse {
+  0% { box-shadow: 0 0 5px rgba(255,128,0,0.3); }
+  50% { box-shadow: 0 0 20px rgba(255,128,0,0.6); }
+  100% { box-shadow: 0 0 5px rgba(255,128,0,0.3); }
 }
 
 @media (max-width: 768px) {

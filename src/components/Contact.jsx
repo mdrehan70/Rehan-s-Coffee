@@ -34,10 +34,10 @@ const Contact = () => {
   
   return (
     <section className="contact">
+      <h1>
+        Contact <span>Us</span>
+      </h1>
       <div className="contact-container">
-        <h1>
-          Contact <span>Us</span>
-        </h1>
         <p className="contact-intro">
           We’d love to hear from you! Whether you have a question, suggestion,
           or just want to say hi — let’s connect over a cup of coffee ☕.

@@ -5,6 +5,8 @@ import { useLocation, useNavigate } from "react-router-dom";
 const Payment = () => {
   const location = useLocation();
   const navigate = useNavigate();
+
+  // Step 1: Get total amount (from cart OR product)
   const totalAmount = location.state?.total || 0;
 
   const [isPaid, setIsPaid] = useState(false);
@@ -17,7 +19,7 @@ const Payment = () => {
   useEffect(() => {
     if (isPaid) {
       const timer = setTimeout(() => {
-        navigate("/"); // redirect to home after 3 sec
+        navigate("/"); // redirect to home after 4 sec
       }, 4000);
       return () => clearTimeout(timer);
     }

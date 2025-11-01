@@ -30,8 +30,8 @@ const Product = () => {
     return <p className="error">Error: {error.message}</p>;
   } 
 
-  const handleOrderBtn = () => { 
-    navigate("/payment")
+  const handleOrderBtn = (item) => { 
+    navigate("/payment", { state: { total: item.price.replace("₹", "") } });
   }
 
   const handleCartBtn = (item) => { 
@@ -72,7 +72,7 @@ const Product = () => {
                 <p>{item.desc}</p>
                 <div className="price">{item.price}</div>
                 <div className="card-buttons">
-                  <button className="btn-order" onClick={handleOrderBtn}>Order Now</button>
+                  <button className="btn-order" onClick={() => handleOrderBtn(item)}>Order Now</button>
                   <button className="btn-cart" onClick={() => handleCartBtn(item)}>Add To Cart</button>
                 </div>
               </div>

@@ -171,6 +171,13 @@
   animation: fadeUp 1s ease-in-out;
 }
 
+.cart-total h3 {
+  border-bottom: 2px solid #ffb347;
+  padding: 0 0 15px 0;
+  width: 250px;
+  margin: 0 auto;
+}
+
 .checkout-btn {
   margin-top: 15px;
   padding: 12px 24px;

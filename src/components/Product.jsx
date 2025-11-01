@@ -46,8 +46,9 @@ const Product = () => {
       // localStorage.setItem("cart", JSON.stringify(cartItem))
       // toast.success(`${item.name} Added to Your Cart!`)
     } else {
-      cartItem.push({...item, quantity: 1})
-      toast.success(`${item.name} Added to Your Cart!`)
+      const updatedCart = [{ ...item, quantity: 1 }, ...cartItem];
+      cartItem = updatedCart;
+      toast.success(`${item.name} Added to Your Cart!`);
 
       // toast.error(`${item.name} is already in you Cart.`)
     }

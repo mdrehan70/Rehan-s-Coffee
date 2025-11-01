@@ -6,7 +6,7 @@ const AnimatedCursor = lazy(() => import("react-animated-cursor"));
 const Root = () => {
   return (
     <div>
-      {/* <Suspense fallback={null}>
+      <Suspense fallback={null}>
         <AnimatedCursor
           innerSize={8}
           outerSize={35}
@@ -23,7 +23,7 @@ const Root = () => {
             zIndex: 9999,
           }}
         />
-      </Suspense> */}
+      </Suspense>
       <Navbar />
       <Outlet />
     </div>

@@ -127,11 +127,11 @@
   }
 
   .payment-form {
-    width: 350px;
+    width: 320px;
     margin: auto;
   }
 
   .expiry input, .cvv input {
-    width: 125px;
+    width: 111px;
   }
 }

@@ -1,0 +1,195 @@
+/* ---------- Base Styles ---------- */
+.contact {
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(145deg, #0e0e0e, #1a1a1a);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5.5rem 1rem 1rem 1rem;
+  overflow: hidden;
+  position: relative;
+}
+
+/* ---------- Floating Glow Animation ---------- */
+.contact::before,
+.contact::after {
+  content: "";
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,123,0,0.25), transparent 70%);
+  animation: floatGlow 8s infinite alternate ease-in-out;
+  filter: blur(90px);
+}
+
+.contact::before {
+  top: 10%;
+  left: -5%;
+}
+
+.contact::after {
+  bottom: 10%;
+  right: -5%;
+}
+
+@keyframes floatGlow {
+  0% { transform: translateY(0px); opacity: 0.6; }
+  100% { transform: translateY(20px); opacity: 0.9; }
+}
+
+/* ---------- Container ---------- */
+.contact-container {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 30px rgba(255, 123, 0, 0.1);
+  border-radius: 16px;
+  padding: 2rem 2rem;
+  max-width: 600px;
+  width: 100%;
+  text-align: center;
+  backdrop-filter: blur(12px);
+  transition: all 0.4s ease;
+}
+
+.contact-container:hover {
+  box-shadow: 0 0 35px rgba(255, 97, 0, 0.3);
+  transform: scale(1.01);
+}
+
+/* ---------- Headings ---------- */
+.contact h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #ff7b00;
+  margin-bottom: 1rem;
+  letter-spacing: 1px;
+}
+
+.contact h1 span {
+  color: #fff;
+}
+
+.contact-intro {
+  font-size: 1rem;
+  color: #bbb;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+/* ---------- Form ---------- */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.contact-form label {
+  text-align: left;
+  font-weight: 500;
+  color: #ddd;
+}
+
+.contact-form input,
+.contact-form textarea {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 10px;
+  padding: 0.9rem 1rem;
+  color: #fff;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  resize: none;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #888;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #ff7b00;
+  box-shadow: 0 0 10px rgba(255, 123, 0, 0.4);
+  outline: none;
+}
+
+/* ---------- Button ---------- */
+.contact-form button {
+  background: linear-gradient(90deg, #ff7b00, #ff9500);
+  color: #fff;
+  font-weight: 600;
+  padding: 0.9rem;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  font-size: 1rem;
+  box-shadow: 0 0 20px rgba(255, 123, 0, 0.3);
+}
+
+.contact-form button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 25px rgba(255, 123, 0, 0.6);
+}
+
+/* ---------- Contact Details ---------- */
+.contact-details {
+  margin-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 1.5rem;
+  font-size: 0.95rem;
+  color: #ccc;
+  line-height: 1.8;
+}
+
+.contact-details p {
+  margin: 0.3rem 0;
+  transition: color 0.3s ease;
+}
+
+.contact-details p:hover {
+  color: #ff7b00;
+}
+
+/* ---------- Success Section ---------- */
+.contact.success {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.thank-message {
+  font-size: 1.1rem;
+  color: #ccc;
+  margin-top: 1rem;
+  animation: fadeIn 1s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 768px) {
+  .contact-container {
+    padding: 2rem 1.5rem;
+  }
+
+  .contact h1 {
+    font-size: 2rem;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 0.95rem;
+  }
+
+  .contact-form button {
+    font-size: 0.95rem;
+  }
+}
